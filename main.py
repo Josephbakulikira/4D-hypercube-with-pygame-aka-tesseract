@@ -108,11 +108,13 @@ while run:
                             [0, 0, w, 0],]
 
         projected_3d = matrix_multiplication(projection_matrix4, rotated_3d)
-        projection_matrix = [[w, 0, 0],
-                            [0, w, 0 ]
-                            ]
         rotated_2d = matrix_multiplication(tesseract_rotation, projected_3d)
-        rotated_2d = matrix_multiplication(rotation_x, rotated_2d)
+        z = 1/(distance - (rotated_2d[2][0] + rotated_3d[3][0]))
+        projection_matrix = [[z, 0, 0],
+                            [0, z, 0 ]
+                            ]
+
+        #rotated_2d = matrix_multiplication(rotation_x, projected_3d)
         projected_2d = matrix_multiplication(projection_matrix, rotated_2d)
         x = int(projected_2d[0][0] * scale) + cube_position[0]
         y = int(projected_2d[1][0] * scale) + cube_position[1]
