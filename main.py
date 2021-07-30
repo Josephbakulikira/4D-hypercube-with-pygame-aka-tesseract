@@ -4,7 +4,7 @@ import math
 from matrix import matrix_multiplication
 
 os.environ["SDL_VIDEO_CENTERED"]='1'
-black, white, blue  = (20, 20, 20), (230, 230, 230), (0, 154, 255)
+black, white, blue  = (5, 6, 6), (230, 230, 230), (0, 154, 255)
 width, height = 1920, 1080
 
 pygame.init()
@@ -40,13 +40,13 @@ points[15] = [[-1], [1], [-1], [-1]]
 def connect_point(i, j, k, offset):
     a = k[i + offset]
     b = k[j + offset]
-    pygame.draw.line(screen, black, (a[0], a[1]), (b[0], b[1]), 3)
+    pygame.draw.line(screen, white, (a[0], a[1]), (b[0], b[1]), 3)
 
 
 run = True
 while run:
     clock.tick(fps)
-    screen.fill(white)
+    screen.fill(black)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
