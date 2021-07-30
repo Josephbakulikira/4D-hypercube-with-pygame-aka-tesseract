@@ -15,7 +15,7 @@ fps = 60
 
 angle = 0
 cube_position = [width//2, height//2]
-scale = 2500
+scale = 4000
 speed = 0.01
 points = [n for n in range(16)]
 
@@ -50,6 +50,9 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_ESCAPE:
+                run = False
 
     index = 0
     projected_points = [j for j in range(len(points))]
@@ -103,7 +106,8 @@ while run:
 
         distance = 5
         w = 1/(distance - rotated_3d[3][0])
-        projection_matrix4 = [[w, 0, 0, 0],
+        projection_matrix4 = [
+                            [w, 0, 0, 0],
                             [0, w, 0, 0],
                             [0, 0, w, 0],]
 
@@ -114,7 +118,7 @@ while run:
                             [0, z, 0 ]
                             ]
 
-        #rotated_2d = matrix_multiplication(rotation_x, projected_3d)
+        rotated_2d = matrix_multiplication(rotation_x, projected_3d)
         projected_2d = matrix_multiplication(projection_matrix, rotated_2d)
         x = int(projected_2d[0][0] * scale) + cube_position[0]
         y = int(projected_2d[1][0] * scale) + cube_position[1]
