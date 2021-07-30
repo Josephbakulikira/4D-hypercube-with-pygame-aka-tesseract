@@ -40,7 +40,7 @@ points[15] = [[-1], [1], [-1], [-1]]
 def connect_point(i, j, k, offset):
     a = k[i + offset]
     b = k[j + offset]
-    pygame.draw.line(screen, black, (a[0], a[1]), (b[0], b[1]), 2)
+    pygame.draw.line(screen, black, (a[0], a[1]), (b[0], b[1]), 3)
 
 
 run = True
@@ -124,7 +124,7 @@ while run:
         y = int(projected_2d[1][0] * scale) + cube_position[1]
 
         projected_points[index] = [x, y]
-        pygame.draw.circle(screen, black, (x, y), 10)
+        pygame.draw.circle(screen, blue, (x, y), 10)
         index += 1
     #draw edges
     for m in range(4):
