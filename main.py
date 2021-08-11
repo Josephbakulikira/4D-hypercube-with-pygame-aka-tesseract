@@ -8,7 +8,7 @@ black, white, blue  = (5, 6, 6), (230, 230, 230), (0, 154, 255)
 width, height = 1920, 1080
 
 pygame.init()
-pygame.display.set_caption("3D cube Projection")
+pygame.display.set_caption("4D cube Projection")
 screen = pygame.display.set_mode((width, height))
 clock = pygame.time.Clock()
 fps = 60
