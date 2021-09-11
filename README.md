@@ -1,5 +1,8 @@
 # 4D-hypercube-animation-with-pygame-aka-tesseract
 
+### Requirements
+>pygame
+
 
 ![Screenshot (12)](https://user-images.githubusercontent.com/48150537/127666689-062ad626-5426-4240-b7d5-503d3fed91c8.png)
 ---
